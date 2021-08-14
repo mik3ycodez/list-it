@@ -1,0 +1,146 @@
+/*
+  Name: Michael Harris
+  Date: August 11, 2021
+  Section: CSE 154 AD
+
+  Contains the CSS for cp4 index.html. Color theme includes wheat and grays.
+  Flex-box with nav and list sections.
+ */
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+  width: 90%;
+}
+
+body, nav, #list-preview {
+  margin: auto;
+}
+
+footer {
+  font-size: 0.75em;
+  margin: 10px 0;
+}
+
+form {
+  text-align: left;
+}
+
+form, legend, nav {
+  padding: 10px;
+}
+
+h1 {
+  font-size: 3em;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+input {
+  margin-left: 5px;
+}
+
+label {
+  margin: 10px;
+}
+
+label, span {
+  display: block;
+}
+
+legend {
+  border-radius: 5px;
+}
+
+legend, nav {
+  background-color: lightslategray;
+}
+
+legend, nav > button {
+  color: wheat;
+}
+
+nav {
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+nav > button {
+  background-color: inherit;
+  border: none;
+  text-decoration: none;
+}
+
+nav > button:active {
+  color: lavender;
+}
+
+nav > button:hover {
+  background-color: darkslategray;
+}
+
+nav, nav > button:hover {
+  border-radius: 10px;
+}
+
+nav, section:nth-child(2) {
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+nav > button, span > input {
+  font-size: 1.5em;
+}
+
+nav, #list-preview {
+  width: 50%;
+}
+
+section > header {
+  width: 100%;
+}
+
+section:nth-child(2) {
+  flex-direction: row-reverse;
+  flex-wrap: wrap-reverse;
+}
+
+span {
+  text-align: right;
+}
+
+strong, #error-msg {
+  color: red;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.hidden.hidden { /* Duplicated to increase specificity */
+  display: none;
+}
+
+.list-card {
+  border: solid 1px black;
+  box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.2), 0 5px 20px 2px rgba(0, 0, 0, 0.19);
+  margin: 2%;
+  min-width: 200px;
+  max-width: 50%;
+  padding: 0 10px; /* vertical horizontal */
+  word-wrap: break-word;
+}
+
+.done {
+  color: lightslategray;
+  text-decoration: line-through;
+}
+
+#current-lists {
+  justify-content: center;
+}

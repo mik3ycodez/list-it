@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--
+  Name: Michael Harris
+  Date: August 11, 2021
+  Section: CSE 154 AD
+
+  The index.html page for Creative Project 4. Provides a service allowing for a user
+  to generate new lists with capability for user generated categories and store locations.
+  Categories, stores, and lists are pulled from a localhost server API and updated to the
+  server.
+-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&display=swap"
+    rel="stylesheet">
+    <script src="index.js"></script>
+    <title>List It</title>
+  </head>
+  <body>
+    <header>
+      <h1>List It</h1>
+      <nav>
+        <button disabled>Current Lists</button>
+        <button>New List</button>
+      </nav>
+    </header>
+    <section id="current-lists">
+      <!-- This section is populated by JavaScript and API calls to retrieve
+        currently stored lists. -->
+      <header><h2>Current Lists</h2></header>
+    </section>
+    <section id="list-preview" class="hidden">
+      <header>
+        <h2>New List</h2>
+        <h3>List Preview</h3>
+      </header>
+      <!-- The following article is populated by JavaScript while a user adds a new list. -->
+      <article id="preview-card" class="list-card">
+        <header>
+          <h3></h3>
+          <ul class="list-descriptors">
+            <li class="hidden"></li>
+            <li class="hidden"></li>
+            <li class="hidden"></li>
+            <li class="hidden"></li>
+          </ul>
+        </header>
+        <ul class="list-items"></ul>
+      </article>
+    </section>
+    <section id="new-list" class="hidden">
+      <article>
+        <form id="new-list-form">
+          <fieldset>
+            <legend>What is your new list?</legend>
+            <label for="title">Title:<strong>*</strong>
+              <input type="text" id="title" required>
+            </label>
+            <label for="date">Date:<strong>*</strong>
+              <input type="date" id="date" required>
+            </label>
+            <label for="categories">Category:
+              <select id="categories">
+                <option selected>Please make a selection...</option>
+                <option>Other</option>
+              </select>
+              <input type="button" value="Insert New Category">
+            </label>
+            <fieldset class="hidden">
+              <legend>Insert New Category:</legend>
+              <label for="add-category">New Category:
+                <input type="text" id="add-category">
+                <input type="button" value="Add Category">
+              </label>
+            </fieldset>
+            <label for="stores">Store:
+              <select id="stores">
+                <option selected>Please make a selection...</option>
+                <option>Other</option>
+              </select>
+              <input type="button" value="Insert New Store">
+            </label>
+            <fieldset class="hidden">
+              <legend>Insert New Store:</legend>
+              <label for="add-store">New Store:
+                <input type="text" id="add-store">
+                <input type="button" value="Add Store">
+              </label>
+            </fieldset>
+            <label for="website">Website:<input type="text" id="website"></label>
+            <label for="new-list-item">List Item:<strong>*</strong>
+              <input type="text" id="new-list-item">
+              <input type="button" value="Add List Item">
+            </label>
+            <br>
+            <span>
+              <p>Complete the list once you have added all desired list items.
+                Pressing the 'Enter' key will press the 'Complete List' button.
+              </p>
+              <input type="submit" value="Complete List">
+            </span>
+          </fieldset>
+        </form>
+      </article>
+    </section>
+    <!-- Following p tag updated to show API error messages. -->
+    <p id="error-msg"></p>
+    <footer>
+      <cite>Fonts provided by
+        <a href="hhttps://fonts.google.com" target="_blank">Google Fonts</a>
+      </cite>
+    </footer>
+  </body>
+</html>
