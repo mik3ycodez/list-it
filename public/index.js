@@ -303,7 +303,7 @@
    */
   function showAddNew() {
     this.classList.toggle("hidden");
-    let parentsNextSibling = this.parentElement.nextElementSibling;
+    let parentsNextSibling = this.nextElementSibling;
     parentsNextSibling.classList.toggle("hidden");
   }
 
@@ -312,9 +312,9 @@
    * Category/Store button.
    */
   function hideAddNew() {
-    this.parentElement.parentElement.classList.toggle("hidden");
-    let prevSibling = this.parentElement.parentElement.previousElementSibling;
-    prevSibling.lastElementChild.classList.toggle("hidden");
+    this.parentElement.classList.toggle("hidden");
+    let prevSibling = this.parentElement.previousElementSibling;
+    prevSibling.classList.toggle("hidden");
   }
 
   /**
